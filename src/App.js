@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { AppUserContext } from './context/AppUserContext';
 
-function App() {
+//import './App.css';
+
+const App = () => {
+  
+ let routes = (
+  <Switch>
+    <Route path="/signin" component={SignIn} />
+    <Route path="/signup" component={SignUp} />
+    <PrivateRoute component={ExpenseTrackerDashBoard} path="/dashboard" exact />
+    <Redirect to="/" />
+  </Switch>
+ );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    routes
   );
 }
 
