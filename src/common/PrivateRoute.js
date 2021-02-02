@@ -5,7 +5,7 @@ import { AppUserContext } from '../context/AppUserContext';
 
 const PrivateRoute = ({ 
     component: Component, 
-    ...rest 
+    ...restOfTheProps 
 }) => {
 
     const appUserContext = useContext(AppUserContext);
@@ -13,7 +13,7 @@ const PrivateRoute = ({
     return (
         // Show the component only when the user is logged in
         // Otherwise, redirect the user to /signin page
-        <Route {...rest} render={props => (appUserContext._isAuthenticated ? <Component {...props} /> : <Redirect to="/" />)} />                         
+        <Route {...restOfTheProps} render={props => (appUserContext._isAuthenticated ? <Component {...props} /> : <Redirect to="/" />)} />                         
     );
 }
 
