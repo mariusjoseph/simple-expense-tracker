@@ -4,7 +4,7 @@ export const AppUserContext = React.createContext({
     _isAuthenticated:false,
     _userinfo:{},
     _login:() => {},
-    _signUp:() => []
+    _signUp:() => {}
 });
 
 const AppUser = props => {
@@ -24,13 +24,14 @@ const AppUser = props => {
         }
     }
 
-    const signUpContextHandler = (
-        name,
-        email,
-        password
-    ) => {
+    const signUpContextHandler = (formData) => {
+        
+        const { email, name, password } = formData;
 
-
+        console.log(email);
+        console.log(name);
+        console.log(password);
+        //send post request to create user
 
     }
 

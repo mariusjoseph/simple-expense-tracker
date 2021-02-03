@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 //import Home from './pages/home/Home';
 import SignIn from './pages/signin/SignIn';
 import SignUp from './pages/signup/SignUp';
-import ExpenseTrackerDashBoard from './pages/expenseTrackerDashBoard/ExpenseTrackerDashBoard';
+import ExpenseTrackerDashBoard from './pages/ExpenseTrackerDashBoard/ExpenseTrackerDashBoard';
 
 //Common
 import PrivateRoute from './common/PrivateRoute';
